@@ -202,7 +202,9 @@ app.get('/', async (req, res) => {
             authors,
             currentPage: page,
             totalPages,
-            limit
+            limit,
+            minPrice,
+            maxPrice,
         });
     } catch (error) {
         console.error('Error retrieving books:', error);
