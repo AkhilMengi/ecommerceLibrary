@@ -23,7 +23,10 @@ const bookSchema = new mongoose.Schema({
     available: {
       type: Boolean,
       default: true // Sets default value to 'true' for availability
-    }
+    },price:{
+      type:Number,
+      min:1
+    } 
   }, { timestamps: true });
 
 const Book = mongoose.model('Book',bookSchema)

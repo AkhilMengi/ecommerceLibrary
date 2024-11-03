@@ -141,17 +141,17 @@
         border: 1px solid #ccc;
         border-radius: 8px;
         margin: 10px;
-        padding: 15px;
-        width: 200px;
-        height: 250px;
+        padding: 20px;
+        width: 230px;
+        height: 270px;
         box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content:flex-start
     }
 
     .book-title {
-        font-size: 1.2em;
+        font-size: 1.1em;
         margin: 0;
     }
 
@@ -160,7 +160,7 @@
         color: white;
         border: none;
         border-radius: 4px;
-        padding: 10px;
+        padding: 5px;
         cursor: pointer;
         width: 100%;
     }
@@ -252,6 +252,8 @@
                     <p>Published: <%= book.publishedDate %>
                     </p>
                     <p>Available: <%= book.available %>
+                    </p>
+                    <p>Cost: <%= book.price %>
                     </p>
                     <button class="book-button">View Details</button>
                 </div>
