@@ -24,8 +24,7 @@ const bookSchema = new mongoose.Schema({
       type: Boolean,
       default: true // Sets default value to 'true' for availability
     },price:{
-      type:Number,
-      min:1
+      type:Number
     } 
   }, { timestamps: true });
 
