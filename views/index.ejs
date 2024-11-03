@@ -231,15 +231,6 @@
                         > Available Books
                 </label>
             </div>
-            <div class="filter-group">
-                <label for="minPrice">Min Price:</label>
-                <input type="number" name="minPrice" id="minPrice" class="filter-select" placeholder="e.g., 10" step="0.01" min="0">
-            </div>
-            <div class="filter-group">
-                <label for="maxPrice">Max Price:</label>
-                <input type="number" name="maxPrice" id="maxPrice" class="filter-select" placeholder="e.g., 100" step="0.01" min="0">
-            </div>
-            
 
             <div class="filter-buttons">
                 <button type="submit" class="filter-button">Filter</button>
@@ -262,7 +253,7 @@
                     </p>
                     <p>Available: <%= book.available %>
                     </p>
-                    <p>Cost:$ <%= book.price %>
+                    <p>Cost: <%= book.price %>
                     </p>
                     <button class="book-button">View Details</button>
                 </div>
