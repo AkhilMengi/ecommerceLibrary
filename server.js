@@ -169,11 +169,6 @@ app.get('/', async (req, res) => {
         const page = parseInt(req.query.page) || 1; // Default to page 1
         const limit = parseInt(req.query.limit) || 20; // Default to 10 items per page
 
-        // Get min and max price from query parameters
-        const minPrice = parseFloat(req.query.minPrice) || 0;
-        console.log(minPrice)
-        const maxPrice = parseFloat(req.query.maxPrice) || Infinity;
-
         let query = {}; // Build the query object
 
         if (filter === 'available') {
@@ -184,16 +179,11 @@ app.get('/', async (req, res) => {
             query.author = selectedAuthor; // Filter by selected author
         }
 
-        if (minPrice >= 0 && maxPrice < Infinity) {
-            query.price = { $gte: minPrice, $lte: maxPrice };
-        }
-
-
         // Calculate total number of books for pagination
         const totalBooks = await Book.countDocuments(query);
-        // console.log(totalBooks)
+        console.log(totalBooks)
         const totalPages = Math.ceil(totalBooks / limit);
-        // console.log(totalPages)
+        console.log(totalPages)
 
         // Fetch books for the current page
         const books = await Book.find(query)
@@ -214,7 +204,7 @@ app.get('/', async (req, res) => {
             totalPages,
             limit,
             minPrice,
-            maxPrice
+            maxPrice,
         });
     } catch (error) {
         console.error('Error retrieving books:', error);
