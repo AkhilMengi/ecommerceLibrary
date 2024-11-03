@@ -169,6 +169,10 @@ app.get('/', async (req, res) => {
         const page = parseInt(req.query.page) || 1; // Default to page 1
         const limit = parseInt(req.query.limit) || 20; // Default to 10 items per page
 
+        // Get min and max price from query parameters
+        const minPrice = parseFloat(req.query.minPrice) || 0;
+        const maxPrice = parseFloat(req.query.maxPrice) || Infinity;
+
         let query = {}; // Build the query object
 
         if (filter === 'available') {
