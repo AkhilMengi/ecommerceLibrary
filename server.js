@@ -182,6 +182,7 @@ app.get('/', async (req, res) => {
         if (selectedAuthor !== 'all') {
             query.author = selectedAuthor; // Filter by selected author
         }
+       
 
         // Calculate total number of books for pagination
         const totalBooks = await Book.countDocuments(query);
@@ -229,4 +230,3 @@ app.get('/', async (req, res) => {
 app.listen(PORT, () => {
     console.log(`Server is listening at ${PORT}`)
 })
-
